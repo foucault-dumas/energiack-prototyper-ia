@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+/* ESM brandbook 2026 — Die Grotesk B, three weights, self-hosted. Fallback Arial. */
+@font-face {
+  font-family: "Die Grotesk B";
+  src: url("/fonts/DieGrotesk-B-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Die Grotesk B";
+  src: url("/fonts/DieGrotesk-B-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Die Grotesk B";
+  src: url("/fonts/DieGrotesk-B-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --esm-bleu: #003284;
+  --esm-violet: #725fe0;
+  --esm-vert: #96ceb3;
+  --esm-rose: #f19df6;
+  --esm-orange: #df5727;
+  --esm-lavande: #b3afd3;
+  --esm-noir: #051609;
+  --esm-clair: #f3f2ee;
+  --esm-blanc: #ffffff;
+}
+
+@theme inline {
+  --color-bleu: var(--esm-bleu);
+  --color-violet: var(--esm-violet);
+  --color-vert: var(--esm-vert);
+  --color-rose: var(--esm-rose);
+  --color-orange: var(--esm-orange);
+  --color-lavande: var(--esm-lavande);
+  --color-noir: var(--esm-noir);
+  --color-clair: var(--esm-clair);
+  --color-blanc: var(--esm-blanc);
+  --font-sans: "Die Grotesk B", Arial, Helvetica, sans-serif;
+}
+
+/* No radius, no shadows, no gradients anywhere. Kerning 0. */
+* {
+  box-sizing: border-box;
+  border-radius: 0 !important;
+  letter-spacing: 0;
+}
+
+html,
+body {
+  height: 100%;
+
+}
+
+body {
+  font-family: "Die Grotesk B", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: var(--esm-noir);
+  background: var(--esm-clair);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Background / text pairs — locked by the brandbook contrast table. */
+.bg-bleu { background: var(--esm-bleu); color: var(--esm-blanc); }
+.bg-violet { background: var(--esm-violet); color: var(--esm-blanc); }
+.bg-vert { background: var(--esm-vert); color: var(--esm-noir); }
+.bg-rose { background: var(--esm-rose); color: var(--esm-noir); }
+.bg-orange { background: var(--esm-orange); color: var(--esm-noir); }
+.bg-lavande { background: var(--esm-lavande); color: var(--esm-noir); }
+.bg-noir { background: var(--esm-noir); color: var(--esm-clair); }
+.bg-clair { background: var(--esm-clair); color: var(--esm-noir); }
+
+/* On violet, only a huge title may be black (≥ 24 px bold). */
+.bg-violet .display-title { color: var(--esm-noir); }
+
+.display-title {
+  font-weight: 500;
+  line-height: 0.98;
+  font-size: clamp(2.75rem, 7.5vw, 8rem);
+
+}
+.h2 {
+  font-weight: 500;
+  line-height: 1.05;
+  font-size: clamp(1.75rem, 3.6vw, 3.4rem);
+
+}
+.h3 {
+  font-weight: 500;
+  line-height: 1.1;
+  font-size: clamp(1.25rem, 2vw, 1.9rem);
+
+}
+.lead {
+  font-weight: 500;
+  font-size: clamp(1.1rem, 1.6vw, 1.6rem);
+  line-height: 1.3;
+}
+.body {
+  font-size: clamp(1rem, 1.25vw, 1.3rem);
+  line-height: 1.4;
+}
+.small {
+  font-size: clamp(0.85rem, 1vw, 1.05rem);
+  line-height: 1.35;
+}
+
+.esm-logo {
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Modular grid without gutters — the ESM signature. */
+.esm-grid {
+  display: grid;
+  gap: 0;
+}
+
+/* Buttons: flat blocks, sharp corners. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  padding: 0.75rem 1.4rem;
+  border: 2px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+  line-height: 1.1;
+  transition: background 120ms, color 120ms, transform 80ms;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+.btn-solid {
+  background: var(--esm-noir);
+  color: var(--esm-clair);
+  border-color: var(--esm-noir);
+}
+.bg-bleu .btn-solid,
+.bg-noir .btn-solid,
+.bg-violet .btn-solid {
+  background: var(--esm-blanc);
+  color: var(--esm-noir);
+  border-color: var(--esm-blanc);
+}
+.btn-lg { padding: 1.1rem 2.2rem; font-size: clamp(1.1rem, 1.5vw, 1.5rem); }
+.btn-sm { padding: 0.45rem 0.9rem; font-size: clamp(0.8rem, 0.95vw, 1rem); }
+
+/* Scene transitions */
+@keyframes scene-in {
+  0% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-scene-in { animation: scene-in 260ms ease-out both; }
+
+@keyframes pop-in {
+  0% { transform: scale(0.85); opacity: 0; }
+  70% { transform: scale(1.03); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-pop { animation: pop-in 220ms ease-out both; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.animate-blink { animation: blink 1s step-end infinite; }
+
+@keyframes glide {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-glide { animation: glide 5s ease-in-out infinite; }
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Hide scrollbars in the projected deck */
+.deck { overflow: hidden; }
+.deck ::-webkit-scrollbar { width: 6px; }
+.deck ::-webkit-scrollbar-thumb { background: rgba(5, 22, 9, 0.25); }
+
+/* Hairline dividers inside grids: use an inner border of the block's own text colour. */
+.hair { border: 1px solid currentColor; }
+.hair-t { border-top: 1px solid currentColor; }
+.hair-b { border-bottom: 1px solid currentColor; }
+.hair-l { border-left: 1px solid currentColor; }
+.hair-r { border-right: 1px solid currentColor; }
