@@ -188,7 +188,7 @@ function AvenantScene() {
   return (
     <Scene accent="clair">
       <div className="esm-grid min-h-0 flex-1 grid-cols-1 md:grid-cols-12">
-        <div className="flex flex-col pr-[3vw] md:col-span-8">
+        <div className="flex flex-col md:col-span-12">
           <Kicker>{AVENANT.kicker}</Kicker>
           <H2>{AVENANT.title}</H2>
           <div className="esm-grid mt-[3vh] flex-1 grid-cols-1 md:grid-cols-2">
@@ -201,10 +201,6 @@ function AvenantScene() {
             ))}
           </div>
         </div>
-        <Block accent="orange" className="flex flex-col justify-end p-[2.5vw] md:col-span-4">
-          <span className="h2">{AVENANT.boxTitle}</span>
-          <p className="lead mt-[2vh]">{AVENANT.box}</p>
-        </Block>
       </div>
     </Scene>
   );

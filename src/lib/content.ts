@@ -188,8 +188,6 @@ export const AVENANT = {
     { title: "A team account.", line: "Owned by a registered participant, who answers for the team." },
     { title: "A declared plan.", line: "Tool, plan, setting status and datasets: declared when you hand in." },
   ],
-  boxTitle: "Which dataset is covered?",
-  box: "Each provider decides for its own dataset. Listen to the organisers' announcement. Without approval: no online AI on that dataset.",
 };
 
 export const SETTINGS = {
@@ -209,7 +207,7 @@ export const SETTINGS = {
       scope: "Free, Plus and Pro accounts, Codex included",
       how: "Settings › Data Controls: turn off “Improve the model for everyone”.",
       link: "chatgpt.com/settings/DataControls",
-      extra: "Codex in the cloud: a second switch, “Include environments” (Codex settings), allows training on your code. Leave it off.",
+      extra: "",
       pro: "Business, Enterprise, Edu and API: no training by default.",
     },
   ],
@@ -237,7 +235,7 @@ export const LOCAL = {
   kicker: "The 100% local option",
   title: "Nothing leaves your computer.",
   lead: "Always allowed, with no other condition (Charter, art. 5; addendum, art. 2.2).",
-  who: "For teams at ease with the terminal, with a computer that can run a model able to code. Otherwise: the addendum.",
+  who: "For teams at ease with the terminal, with a computer that can run a model able to code.",
   diagram: {
     frame: "Your computer",
     brain: "1 · The brain",

@@ -188,8 +188,6 @@ export const AVENANT = {
     { title: "Un compte de l'équipe.", line: "Celui d'un·e participant·e inscrit·e, qui en répond pour l'équipe." },
     { title: "Une offre déclarée.", line: "Outil, offre, état du réglage et jeux concernés : déclarés au rendu." },
   ],
-  boxTitle: "Quel jeu est couvert ?",
-  box: "Chaque fournisseur décide pour son seul jeu. Écoutez l'annonce de l'organisateur. Sans validation : pas d'IA en ligne sur ce jeu.",
 };
 
 export const SETTINGS = {
@@ -209,7 +207,7 @@ export const SETTINGS = {
       scope: "Comptes Free, Plus et Pro, Codex compris",
       how: "Settings › Data Controls : désactivez « Improve the model for everyone ».",
       link: "chatgpt.com/settings/DataControls",
-      extra: "Codex dans le cloud : un 2ᵉ interrupteur, « Include environments » (paramètres Codex), autorise l'entraînement sur votre code. Laissez-le désactivé.",
+      extra: "",
       pro: "Business, Enterprise, Edu et API : pas d'entraînement par défaut.",
     },
   ],
@@ -237,7 +235,7 @@ export const LOCAL = {
   kicker: "Option 100 % local",
   title: "Rien ne sort de votre ordinateur.",
   lead: "Toujours admis, sans autre condition (Charte, art. 5 ; avenant, art. 2.2).",
-  who: "Pour les équipes à l'aise avec le terminal, avec un ordinateur qui encaisse un modèle capable de coder. Sinon : l'avenant.",
+  who: "Pour les équipes à l'aise avec le terminal, avec un ordinateur qui encaisse un modèle capable de coder.",
   diagram: {
     frame: "Votre ordinateur",
     brain: "1 · Le cerveau",
